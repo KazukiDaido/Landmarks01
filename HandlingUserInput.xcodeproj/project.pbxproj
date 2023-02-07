@@ -228,9 +228,9 @@
 		C2FEB33624B7C9DA004FAB73 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C2C583BC24DB807000DD0019 /* ContentView.swift */,
 				44CD0031298AF754009D9968 /* Profile */,
 				44CD001F2988F17C009D9968 /* Hikes */,
-				C2C583BC24DB807000DD0019 /* ContentView.swift */,
 				44CD002829899A3D009D9968 /* Categories */,
 				44CD001A2986F8CA009D9968 /* Badges */,
 				C2C583C324DB80FC00DD0019 /* Landmarks */,
