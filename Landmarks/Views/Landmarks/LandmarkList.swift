@@ -10,7 +10,7 @@ import SwiftUI
 struct LandmarkList: View {
     @EnvironmentObject var modelData: ModelData
     @State private var showFavoritesOnly = false
-   // @State private var searchText = ""
+    @State private var searchText = ""
     
     var filteredLandmarks: [Landmark] {
         modelData.landmarks.filter { landmark in
@@ -22,16 +22,16 @@ struct LandmarkList: View {
     
     /*
      var searchResults: [Landmark] {
-            if searchText.isEmpty {
-                return modelData.landmarks
-            } else {
-                return modelData.landmarks.name.filter { $0.contains(searchText) }
-            }
-        }
-    */
-     
+     if searchText.isEmpty {
+     return modelData.landmarks
+     } else {
+     return modelData.landmarks.name.filter { $0.contains(searchText) }
+     }
+     }
+     */
+    
     var body: some View {
-       NavigationView {
+        NavigationView {
             List {
                 Toggle(isOn: $showFavoritesOnly) {
                     Text("Favorites only")
@@ -46,20 +46,21 @@ struct LandmarkList: View {
             }
             .navigationTitle("Landmarks")
         }
+        .searchable(text: $searchText)
         /*
-        NavigationView {
-            List {
-                ForEach(searchResults, id: \.self) { name in
-                    NavigationLink {
-                        LandmarkDetail(landmark: landmark)
-                    } label: {
-                        LandmarkRow(landmark: landmark)
-                    }
-                }
-            }
-            .searchable(text: $searchText)
-            .navigationTitle("Contacts")
-        }
+         NavigationView {
+         List {
+         ForEach(searchResults, id: \.self) { name in
+         NavigationLink {
+         LandmarkDetail(landmark: landmark)
+         } label: {
+         LandmarkRow(landmark: landmark)
+         }
+         }
+         }
+         .searchable(text: $searchText)
+         .navigationTitle("Contacts")
+         }
          */
     }
 }
